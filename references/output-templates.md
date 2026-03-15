@@ -12,6 +12,7 @@ Use the shortest template that still fits the task. Findings come first in every
 - Do not emit empty headings or checklist filler
 - In Codex App code reviews with precise file locations, prefer `::code-comment{...}` directives for findings so priority renders natively
 - In Codex App artifact-backed rankings, you may also use `::code-comment{...}` directives to render one card per ranked item
+- If you use a real SSOT/SOT artifact as the card anchor instead of the direct subject artifact, say that explicitly in the body
 - When native app directives are unavailable, keep priority visible in the lead label of each finding or result row, for example `[P1]`
 - If the task's explicit contract is comparative ranking or scoring, follow that contract and put the ordered result or score table first when the contract calls for it
 - Use these templates as evidence-discipline guidance, not as a requirement to force ranking work into an audit-shaped report
@@ -97,6 +98,12 @@ For Codex App rankings where each candidate maps to a real artifact file, you ma
 ```
 
 Keep exact rank or tier in the title/body. Use the directive `priority` field only when it honestly represents a coarse tier, not as a fake exact ranking scale.
+
+If there is no direct candidate artifact but there is a real SSOT/SOT file that best grounds the ranking item, you may anchor to that instead:
+
+```text
+::code-comment{title="[Rank 1] Candidate A" body="Top tier. Anchored to the rubric SSOT because there is no single candidate artifact file; this SSOT best grounds the ranking rationale and comparison." file="/absolute/path/to/ssot.md" confidence=0.74}
+```
 
 Fallback plain-text shape:
 
