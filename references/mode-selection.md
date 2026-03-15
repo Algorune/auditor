@@ -27,7 +27,7 @@ Use for code, PRs, configs, runbooks, logs, migrations, or operational claims.
 - Target: identify bugs, regressions, unsafe assumptions, or operational risks.
 - Authority: local repo and runtime evidence first; external docs only for external contracts or freshness-sensitive behavior.
 - Default shape: Findings, Evidence, Assumptions/Uncertainty, Validation/Rollback only if recommending action.
-- Codex App code review variant: when a finding has a precise file location, emit it as a `::code-comment{...}` directive with priority so the app renders it natively.
+- Codex App code review variant: when a finding has a precise file location, emit it as a `::code-comment{...}` directive with priority so the app renders it natively; otherwise keep findings in plain text with explicit priority tags.
 
 ### Comparative ranking / scoring
 
@@ -35,7 +35,7 @@ This skill is not the lead structure for blind ranking, comparative scoring, or 
 
 - Target: follow the task's rubric and explicit output contract.
 - Authority: the provided artifact bundle, rubric, and any local evidence needed to validate the artifacts' claims.
-- Default shape: ordered result or score table first when the contract calls for it, then evidence or rationale, then uncertainty or blockers.
+- Default shape: ordered result or score table first when the contract calls for it, then evidence or rationale, then uncertainty or blockers. Use the lead row itself to carry ordering and any needed tier/priority label in plain text.
 - Default posture: borrow this skill's skepticism, evidence discipline, and contradiction handling, but do not force an audit-shaped report when the task is really comparative evaluation.
 - This is separate from the normal audit behavior of ordering findings by issue priority inside a single review.
 

@@ -11,6 +11,7 @@ Use the shortest template that still fits the task. Findings come first in every
 - Omit sections that do not apply
 - Do not emit empty headings or checklist filler
 - In Codex App code reviews with precise file locations, prefer `::code-comment{...}` directives for findings so priority renders natively
+- When native app directives are unavailable, keep priority visible in the lead label of each finding or result row, for example `[P1]`
 - If the task's explicit contract is comparative ranking or scoring, follow that contract and put the ordered result or score table first when the contract calls for it
 - Use these templates as evidence-discipline guidance, not as a requirement to force ranking work into an audit-shaped report
 - The anti-fabrication rule for rankings applies to candidate or artifact ordering, not to prioritizing findings within an audit
@@ -22,7 +23,7 @@ Use for answers, plans, memos, reviews, and similar artifacts.
 
 ```md
 Findings
-- Material issue with impact and location
+- [P1] Material issue with impact and location
 
 Evidence
 - Local or external support for the finding
@@ -40,7 +41,7 @@ Use for fact-checking, freshness, and citation review.
 
 ```md
 Findings
-- Verified, contradicted, or unresolved claim summaries
+- [P1] Verified, contradicted, or unresolved claim summaries
 
 Evidence
 - Dated citations from primary sources
@@ -68,7 +69,7 @@ Fallback plain-text shape:
 
 ```md
 Findings
-- Material bug, regression, unsafe assumption, or operational risk
+- [P1] Material bug, regression, unsafe assumption, or operational risk
 
 Evidence
 - Files, tests, logs, repro steps, configs, or command output
@@ -89,8 +90,8 @@ Use when the task contract asks for blind ranking, comparative scoring, or rubri
 
 ```md
 Ordered Result / Score Table
-- 1. Candidate or option, with brief rubric-aligned reason
-- 2. Candidate or option, with brief rubric-aligned reason
+- 1. [Top tier] Candidate or option, with brief rubric-aligned reason
+- 2. [Second tier] Candidate or option, with brief rubric-aligned reason
 
 Evidence / Rationale
 - The load-bearing comparisons, contradictions, disqualifiers, or rubric deltas
