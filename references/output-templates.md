@@ -13,7 +13,9 @@ Use the shortest template that still fits the task. Findings come first in every
 - In Codex App code reviews with precise file locations, prefer `::code-comment{...}` directives for findings so priority renders natively
 - In Codex App artifact-backed rankings, you may also use `::code-comment{...}` directives to render one card per ranked item
 - If you use a real SSOT/SOT artifact as the card anchor instead of the direct subject artifact, say that explicitly in the body
+- Treat `::code-comment` title/body as plain text unless you have current-client evidence that richer formatting renders the way you want
 - When native app directives are unavailable, keep priority visible in the lead label of each finding or result row, for example `[P1]`
+- When you are not using cards, render the final output as normal markdown sections/lists, not fenced code blocks, unless the user explicitly asked for a literal snippet
 - If the task's explicit contract is comparative ranking or scoring, follow that contract and put the ordered result or score table first when the contract calls for it
 - Use these templates as evidence-discipline guidance, not as a requirement to force ranking work into an audit-shaped report
 - The anti-fabrication rule for rankings applies to candidate or artifact ordering, not to prioritizing findings within an audit
@@ -23,7 +25,8 @@ Use the shortest template that still fits the task. Findings come first in every
 
 Use for answers, plans, memos, reviews, and similar artifacts.
 
-```md
+Rendered fallback shape:
+
 Findings
 - [P1] Material issue with impact and location
 
@@ -35,13 +38,13 @@ Assumptions / Uncertainty
 
 Delta
 - Include only if a real baseline exists
-```
 
 ## Claim verification
 
 Use for fact-checking, freshness, and citation review.
 
-```md
+Rendered fallback shape:
+
 Findings
 - [P1] Verified, contradicted, or unresolved claim summaries
 
@@ -53,7 +56,6 @@ Unresolved Claims
 
 Confidence / Uncertainty
 - Residual ambiguity or stale-source risk
-```
 
 ## System/change audit
 
@@ -67,9 +69,8 @@ For Codex App code reviews with precise file/line locations, prefer one directiv
 
 Keep directives ordered highest priority first. Add a short prose recap only when cross-file context or residual risk would help, and do not duplicate the full finding body there.
 
-Fallback plain-text shape:
+Rendered fallback shape:
 
-```md
 Findings
 - [P1] Material bug, regression, unsafe assumption, or operational risk
 
@@ -84,7 +85,6 @@ Validation Steps
 
 Rollback Steps
 - Include only when tied to an operational decision or change recommendation
-```
 
 ## Comparative ranking / scoring
 
@@ -105,9 +105,8 @@ If there is no direct candidate artifact but there is a real SSOT/SOT file that 
 ::code-comment{title="[Rank 1] Candidate A" body="Top tier. Anchored to the rubric SSOT because there is no single candidate artifact file; this SSOT best grounds the ranking rationale and comparison." file="/absolute/path/to/ssot.md" confidence=0.74}
 ```
 
-Fallback plain-text shape:
+Rendered fallback shape:
 
-```md
 Ordered Result / Score Table
 - 1. [Top tier] Candidate or option, with brief rubric-aligned reason
 - 2. [Second tier] Candidate or option, with brief rubric-aligned reason
@@ -120,4 +119,3 @@ Uncertainty / Missing Evidence
 
 Blocked
 - Include only when the required bundle is incomplete
-```
