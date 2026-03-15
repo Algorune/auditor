@@ -10,7 +10,8 @@ Use the shortest template that still fits the task. Findings come first in every
 - Assumptions or uncertainty third
 - Omit sections that do not apply
 - Do not emit empty headings or checklist filler
-- If the task's explicit contract is comparative ranking or scoring, follow that contract and use these templates only as evidence-discipline guidance
+- If the task's explicit contract is comparative ranking or scoring, follow that contract and put the ordered result or score table first when the contract calls for it
+- Use these templates as evidence-discipline guidance, not as a requirement to force ranking work into an audit-shaped report
 - The anti-fabrication rule for rankings applies to candidate or artifact ordering, not to prioritizing findings within an audit
 - If the required evidence bundle is missing, state that the task is blocked instead of inventing placeholder rankings or score tables
 
@@ -69,4 +70,23 @@ Validation Steps
 
 Rollback Steps
 - Include only when tied to an operational decision or change recommendation
+```
+
+## Comparative ranking / scoring
+
+Use when the task contract asks for blind ranking, comparative scoring, or rubric-driven ordering.
+
+```md
+Ordered Result / Score Table
+- 1. Candidate or option, with brief rubric-aligned reason
+- 2. Candidate or option, with brief rubric-aligned reason
+
+Evidence / Rationale
+- The load-bearing comparisons, contradictions, disqualifiers, or rubric deltas
+
+Uncertainty / Missing Evidence
+- Only what limits confidence or blocks a cleaner ranking
+
+Blocked
+- Include only when the required bundle is incomplete
 ```

@@ -34,6 +34,7 @@ This skill is not the lead structure for blind ranking, comparative scoring, or 
 
 - Target: follow the task's rubric and explicit output contract.
 - Authority: the provided artifact bundle, rubric, and any local evidence needed to validate the artifacts' claims.
+- Default shape: ordered result or score table first when the contract calls for it, then evidence or rationale, then uncertainty or blockers.
 - Default posture: borrow this skill's skepticism, evidence discipline, and contradiction handling, but do not force an audit-shaped report when the task is really comparative evaluation.
 - This is separate from the normal audit behavior of ordering findings by issue priority inside a single review.
 
