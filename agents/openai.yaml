@@ -1,7 +1,7 @@
 interface:
-  display_name: "Woz Audit"
+  display_name: "Auditor"
   short_description: "Skeptical audits for answers, claims, and changes"
-  default_prompt: "Use $woz-audit to check this answer, claim set, or code change for material risks: preserve scope, verify only load-bearing claims, and return findings first."
+  default_prompt: "Use $auditor to check this answer, claim set, or code change for material risks: preserve scope, verify only load-bearing claims, and return findings first."
 
 policy:
   allow_implicit_invocation: true

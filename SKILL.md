@@ -1,9 +1,9 @@
 ---
-name: woz-audit
+name: auditor
 description: Route audit/verify/fact-check/review requests into prior-output, claim-verification, or system/change audits. Use for skeptical verification, not ordinary implementation, brainstorming, rewriting, or summarization.
 ---
 
-# Woz-Audit
+# Auditor
 
 Use this skill when the job is to lower decision risk by checking an artifact or claim set, not to generate or rewrite content.
 

@@ -1,12 +1,12 @@
-# Woz Audit
+# Auditor
 
 Skeptical audits for answers, claims, and changes.
 
-`woz-audit` is a Codex skill for reducing decision risk. It helps with fact-checking, artifact review, and change audits by staying evidence-first, surfacing only material issues, and keeping the output easy to act on.
+`auditor` is a Codex skill for reducing decision risk. It helps with fact-checking, artifact review, and change audits by staying evidence-first, surfacing only material issues, and keeping the output easy to act on.
 
 ## What it is for
 
-Use `woz-audit` when you want a skeptical pass over something that already exists:
+Use `auditor` when you want a skeptical pass over something that already exists:
 
 - an answer, memo, plan, or prior model output
 - a set of factual claims or citations
@@ -16,7 +16,7 @@ The skill is optimized for verification, not generation. It is meant to lower ri
 
 ## What it is not for
 
-`woz-audit` is not the right tool for:
+`auditor` is not the right tool for:
 
 - ordinary implementation
 - brainstorming
@@ -55,22 +55,22 @@ For ranking work, it leads with the ordered result or score table when the task 
 
 ## Example prompts
 
-- `Use $woz-audit to review this answer for material errors and unsupported claims.`
-- `Use $woz-audit to fact-check these claims and tell me which are verified, contradicted, or unresolved.`
-- `Use $woz-audit to audit this PR for bugs, regressions, and rollback risk.`
+- `Use $auditor to review this answer for material errors and unsupported claims.`
+- `Use $auditor to fact-check these claims and tell me which are verified, contradicted, or unresolved.`
+- `Use $auditor to audit this PR for bugs, regressions, and rollback risk.`
 
 ## Install
 
 Clone the repo into your Codex skills directory or symlink it there:
 
 ```bash
-git clone https://github.com/Algorune/woz-audit.git ~/.codex/skills/woz-audit
+git clone https://github.com/Algorune/auditor.git ~/.codex/skills/auditor
 ```
 
 Or, if you keep your skills in a workspace repo:
 
 ```bash
-ln -s /absolute/path/to/woz-audit ~/.codex/skills/woz-audit
+ln -s /absolute/path/to/auditor ~/.codex/skills/auditor
 ```
 
 ## Repo layout

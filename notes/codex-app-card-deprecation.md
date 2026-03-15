@@ -1,10 +1,10 @@
 # Codex App review-card deprecation note
 
-Status: temporary local policy for `woz-audit` as of 2026-03-15.
+Status: temporary local policy for `auditor` as of 2026-03-15.
 
-This note is intentionally not linked from `SKILL.md` so it does not auto-load with the skill. It exists as a repo-local record of why `woz-audit` stopped recommending `::code-comment{...}` cards as a normal output format.
+This note is intentionally not linked from `SKILL.md` so it does not auto-load with the skill. It exists as a repo-local record of why `auditor` stopped recommending `::code-comment{...}` cards as a normal output format.
 
-## Why cards are deprecated in `woz-audit`
+## Why cards are deprecated in `auditor`
 
 - Card emission creates sticky review state in Codex App rather than acting like a neutral pretty-printer.
 - Dismissing a card in the UI did not appear to durably suppress it across subsequent prompting in the same thread.
