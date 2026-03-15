@@ -29,8 +29,8 @@ Use this skill when the job is to lower decision risk by checking an artifact or
    4. Secondary sources only as corroboration.
 4. Verify only the load-bearing claims. Browse only if the claim is external, freshness-sensitive, explicitly asks for verification or citations, or depends on an external contract.
 5. Reconcile contradictions explicitly. If evidence is weak or conflicting, leave the claim unresolved and say what would de-risk it.
-6. Report findings first, ordered by issue priority and decision impact, then evidence, then assumptions or uncertainty. For Codex App code reviews with precise file locations, emit findings as app-native review directives so priorities render natively; keep any prose summary brief and non-duplicative. Otherwise, carry priority explicitly in the lead label of each finding or result row so it stays visible in plain text. Include delta only when a real baseline exists. Include validation or rollback only when recommending changes or addressing an operational decision.
-7. If the task is comparative ranking or scoring of candidate artifacts or outputs, use the task's rubric and stated output contract as the lead structure. Present the ordered result or score table first when the contract calls for it, then the supporting evidence and uncertainty. In Codex App, if each ranked item maps to a real artifact file, you may emit one app-native review directive per ranked item to reuse card rendering; if there is no direct candidate artifact but there is a real SSOT/SOT artifact that most coheres with the finding or ranked item, you may anchor to that instead and explain the relationship in the body. Carry the exact rank or tier in the title/body, and use the directive `priority` field only when a coarse tier mapping is semantically honest. Use this skill only for evidence discipline and contradiction handling, and if the required bundle is incomplete, report the task as blocked instead of fabricating placeholder rankings, scores, or ordered results. This does not change the normal audit behavior of ordering findings by issue priority.
+6. Report findings first, ordered by issue priority and decision impact, then evidence, then assumptions or uncertainty. Carry priority explicitly in the lead label of each finding or result row so it stays visible in rendered markdown. Include delta only when a real baseline exists. Include validation or rollback only when recommending changes or addressing an operational decision.
+7. If the task is comparative ranking or scoring of candidate artifacts or outputs, use the task's rubric and stated output contract as the lead structure. Present the ordered result or score table first when the contract calls for it, then the supporting evidence and uncertainty. Carry the exact rank or tier in the ordered row or result text. Use this skill only for evidence discipline and contradiction handling, and if the required bundle is incomplete, report the task as blocked instead of fabricating placeholder rankings, scores, or ordered results. This does not change the normal audit behavior of ordering findings by issue priority.
 
 ## Report bar
 
@@ -64,9 +64,8 @@ Open only what you need:
 - Do not assume the repo is universal SSOT.
 - Do not force web research for purely local or private audits.
 - Do not invent baselines, deltas, rollback plans, reproduction, or confidence.
-- Do not emit app review directives unless you have a real file or artifact path for the finding or ranked item.
-- If you use an SSOT/SOT anchor instead of the direct subject artifact, say so explicitly in the finding body.
-- Do not fake file anchors just to trigger card rendering.
+- Do not emit app review directives from this skill unless the user explicitly asks to force or test that format.
+- If the user explicitly asks for cards, use a real file or artifact path and do not fake anchors.
 - Do not confuse prioritizing findings inside an audit with ranking candidate artifacts; finding priority is expected, candidate ranking requires an explicit rubric or output contract.
 - If the required evidence bundle is missing, say the task is blocked and name the missing evidence instead of fabricating placeholder rankings, scores, or ordered outputs.
 - Do not smooth over contradictions.

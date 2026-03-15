@@ -27,7 +27,7 @@ Use for code, PRs, configs, runbooks, logs, migrations, or operational claims.
 - Target: identify bugs, regressions, unsafe assumptions, or operational risks.
 - Authority: local repo and runtime evidence first; external docs only for external contracts or freshness-sensitive behavior.
 - Default shape: Findings, Evidence, Assumptions/Uncertainty, Validation/Rollback only if recommending action.
-- Codex App code review variant: when a finding has a precise file location, emit it as a `::code-comment{...}` directive with priority so the app renders it natively; otherwise keep findings in plain text with explicit priority tags.
+- Rendered markdown variant: even when a finding has a precise file location, keep findings in normal markdown with explicit priority tags unless the user explicitly asks to force app review directives.
 
 ### Comparative ranking / scoring
 
@@ -36,7 +36,7 @@ This skill is not the lead structure for blind ranking, comparative scoring, or 
 - Target: follow the task's rubric and explicit output contract.
 - Authority: the provided artifact bundle, rubric, and any local evidence needed to validate the artifacts' claims.
 - Default shape: ordered result or score table first when the contract calls for it, then evidence or rationale, then uncertainty or blockers. Use the lead row itself to carry ordering and any needed tier/priority label in plain text.
-- Codex App artifact-backed variant: when each ranked item maps to a real artifact file, you may emit one `::code-comment{...}` card per ranked item, with rank or tier in the title/body and the artifact path as the file anchor. If there is no direct artifact but there is a real SSOT/SOT file that most coheres with the item, you may anchor to that and explain the relationship in the body.
+- Rendered markdown variant: keep exact rank or tier in the ordered row/body in normal markdown. Do not switch to app review directives unless the user explicitly asks to force that format.
 - Default posture: borrow this skill's skepticism, evidence discipline, and contradiction handling, but do not force an audit-shaped report when the task is really comparative evaluation.
 - This is separate from the normal audit behavior of ordering findings by issue priority inside a single review.
 
