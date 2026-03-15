@@ -27,6 +27,7 @@ Use for code, PRs, configs, runbooks, logs, migrations, or operational claims.
 - Target: identify bugs, regressions, unsafe assumptions, or operational risks.
 - Authority: local repo and runtime evidence first; external docs only for external contracts or freshness-sensitive behavior.
 - Default shape: Findings, Evidence, Assumptions/Uncertainty, Validation/Rollback only if recommending action.
+- Codex App code review variant: when a finding has a precise file location, emit it as a `::code-comment{...}` directive with priority so the app renders it natively.
 
 ### Comparative ranking / scoring
 

@@ -10,6 +10,7 @@ Use the shortest template that still fits the task. Findings come first in every
 - Assumptions or uncertainty third
 - Omit sections that do not apply
 - Do not emit empty headings or checklist filler
+- In Codex App code reviews with precise file locations, prefer `::code-comment{...}` directives for findings so priority renders natively
 - If the task's explicit contract is comparative ranking or scoring, follow that contract and put the ordered result or score table first when the contract calls for it
 - Use these templates as evidence-discipline guidance, not as a requirement to force ranking work into an audit-shaped report
 - The anti-fabrication rule for rankings applies to candidate or artifact ordering, not to prioritizing findings within an audit
@@ -54,6 +55,16 @@ Confidence / Uncertainty
 ## System/change audit
 
 Use for code, PRs, configs, runbooks, logs, and operational claims.
+
+For Codex App code reviews with precise file/line locations, prefer one directive per finding:
+
+```text
+::code-comment{title="[P1] Short finding label" body="One-paragraph explanation of the bug or risk, with impact and why the evidence supports it." file="/absolute/path/to/file.ts" start=10 end=12 priority=1 confidence=0.87}
+```
+
+Keep directives ordered highest priority first. Add a short prose recap only when cross-file context or residual risk would help, and do not duplicate the full finding body there.
+
+Fallback plain-text shape:
 
 ```md
 Findings
