@@ -11,6 +11,7 @@ Use the shortest template that still fits the task. Findings come first in every
 - Omit sections that do not apply
 - Do not emit empty headings or checklist filler
 - In Codex App code reviews with precise file locations, prefer `::code-comment{...}` directives for findings so priority renders natively
+- In Codex App artifact-backed rankings, you may also use `::code-comment{...}` directives to render one card per ranked item
 - When native app directives are unavailable, keep priority visible in the lead label of each finding or result row, for example `[P1]`
 - If the task's explicit contract is comparative ranking or scoring, follow that contract and put the ordered result or score table first when the contract calls for it
 - Use these templates as evidence-discipline guidance, not as a requirement to force ranking work into an audit-shaped report
@@ -87,6 +88,17 @@ Rollback Steps
 ## Comparative ranking / scoring
 
 Use when the task contract asks for blind ranking, comparative scoring, or rubric-driven ordering.
+
+For Codex App rankings where each candidate maps to a real artifact file, you may render one card per ranked item:
+
+```text
+::code-comment{title="[Rank 1] Candidate A" body="Top tier. Strongest rubric alignment and fewest contradictions in the bundle." file="/absolute/path/to/candidate-a.md" confidence=0.88}
+::code-comment{title="[Rank 2] Candidate B" body="Second tier. Good overall, but weaker on completeness and one rubric dimension." file="/absolute/path/to/candidate-b.md" confidence=0.76}
+```
+
+Keep exact rank or tier in the title/body. Use the directive `priority` field only when it honestly represents a coarse tier, not as a fake exact ranking scale.
+
+Fallback plain-text shape:
 
 ```md
 Ordered Result / Score Table
